@@ -1,0 +1,84 @@
+@font-face{
+    font-family:Roboto_Condensed;
+    src: url(../Font/Roboto_Condensed/RobotoCondensed-Bold.ttf);
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    border-radius: 0 !important;
+    font-family: Roboto_Condensed;
+}
+
+/* Navbar */
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: darkcyan;  
+}.dropdown-content a{
+    color: white;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+/* carousel */
+/* .carousel-caption{
+    position: absolute;
+    top:20%;
+} */
+/* Product */
+.list-product-title{
+    width: 100%;
+    text-transform: uppercase;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.list-product-subtitle{
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.card-product{
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.product-price{
+    position: relative;
+}
+.del-price{
+    text-decoration: line-through;
+}
+.new-price{
+    color: orangered;
+    position: absolute;
+    right: 0.1rem;
+}
+.del-price, .new-price{
+    font-size:20px !important ;
+}
+.btn-add-product:hover{
+    background-color: orangered !important;
+}
+.sale-sticky{
+    color: white;
+    background-color: orangered;
+    display: block;
+    text-align: center;
+    width: 150px;
+    position: absolute;
+    top: 19px;
+    right: -35px;
+    transform: rotate(45deg);
+}
+
+
+
