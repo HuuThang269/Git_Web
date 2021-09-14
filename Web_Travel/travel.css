@@ -1,0 +1,225 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    height: 1000px;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(Images/banner1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 20px ;
+    text-align: center;
+    color: white;
+}
+.header img{
+    width: 170px;
+    float: left;
+}
+.Login-btn{
+    width: 100px;
+    padding: 8px 0;
+    outline: none !important;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    float: right;
+}
+.header h1{
+    padding-top: 200px;
+    padding-bottom: 0;
+    font-size: 55px;
+}
+.header p {
+    margin: 18px 0px;
+}
+.input-group{
+    width: 90%;
+    max-width: 500px;
+    border-radius: 50px;
+    background: white;
+    margin: auto;
+    padding: 2px;
+}
+.form-control{
+    border: 0 !important;
+    border-radius: 30px !important;
+    margin: 2px;
+    box-shadow: none !important;
+}
+.input-group-text{
+    width: 100%;
+    background-image: linear-gradient(#00ff7e, #1f3d90);
+    border: 0 !important;
+    color: #fff !important;
+    border-radius:30px !important;
+    padding: 0 25px;
+    box-shadow: none;
+}
+.features{
+    padding: 100px 0;
+}
+h1{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.features-img img{
+    width: 100%;
+}
+.price{
+    width: 50px;
+    height: 50px;
+    background: #ff5722;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 1px rgba(37,73,214,0.1);
+    position: absolute;
+    left: 20px;
+    bottom: -25px;
+}
+.features-img{
+    position: relative;
+}
+.rating{
+    position: absolute;
+    right: 0;
+    padding: 3px;
+    background: #fff;
+    bottom: -1px;
+}
+.features .fas{
+    font-size: 15px;
+    color: #ff5722;
+}
+.features .far{
+    font-size: 15px;
+    color: #ff5722;
+}
+.features-detail{
+    padding: 20px;
+    text-align: justiy;
+}
+.features-detail h4{
+    margin-top: 5px;
+    font-weight: 800;
+}
+.features-detail .fas{
+    margin-right: 5px;
+}
+.feature-box{
+    box-shadow: 0 0 10px 1px rgba(37,73, 214,0.18);
+    margin-bottom: 30px;
+}
+.gallery{
+    padding: 100px 0 ;
+    background: #efefef;
+
+}
+.gallery-box img{
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.gallery-box img:hover{
+    transform: scale(1.1);
+}
+.gallery-box h4{
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    position: absolute;
+    color: white;
+    top: 45%;
+    text-shadow: -2px 2px 2px #000;
+    font-size: 25px;
+}
+.gallery-box{
+    position: relative;
+    margin-bottom: 30px;
+}
+.banner{
+    height: 600px;
+    background-image: url(Images/banner2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 80px;
+}
+.banner-highlights{
+    height: 300px;
+    padding: 80px 0;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    color: #fff;
+}
+.booking-btn{
+    width: 120px;
+    padding: 8px 0;
+    outline: none !important;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    margin-top: 20px;   
+}
+.users-feedback{
+    padding: 100px 0;
+}
+.user-review{
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgb(61, 55, 55);
+    padding-bottom: 50px;
+}
+.user-review p{
+    padding:50px 10px 10px 10px ;
+}
+.users-feedback img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: relative;
+    margin: -4px 11px -108px -59px;
+}
+.footer{
+padding:80px 20px ;
+background-image: linear-gradient(#2d557d,#9610fb);
+color: white;
+}
+.footer-logo{
+    width: 150px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.footer h4{
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+.footer p{
+    font-size: 12px;
+    text-align: justify;
+    padding-right: 35px;
+}
+.footer .row .fab{
+    padding-right: 20px;
+    font-size: 15px;
+}
+.footer .row .fas{
+    padding-right: 20px;
+    font-size: 15px;
+}
+.footer hr{
+    margin-top: 10px;
+    background: white;
+}
+.fa-heart{
+    margin: 0 5px;
+    color: red;
+}
+.footer .copyright{
+    text-align: center;
+}
