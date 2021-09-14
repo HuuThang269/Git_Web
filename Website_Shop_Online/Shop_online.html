@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
     <title>Shop Online</title>
 </head>
 <body>
@@ -26,13 +27,13 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">New</a>
+                        <a class="nav-link" href="#new">New</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Hot</a>
+                        <a class="nav-link" href="#hot">Hot</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sale Off</a>
+                        <a class="nav-link" href="#sale-off">Sale Off</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,30 +46,35 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#review">Review</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
-                <form class="form-inline">
+                <!-- <form class="form-inline">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
-                    <button class="btn btn-search " type="submit">Search</button>
-                    <img src="images/moon.png" id="icon">
-                    <img src="images/sun.png" id="icon">
-                </form>
+                    <button class="btn btn-search " type="submit">Search</button>   
+                </form> -->
+                <!-- <i class="far fa-user-circle"></i> -->
+                <a href="#"><img src="images/user.png" class="login"></a>
+                <img src="images/moon.png" id="icon">
+                <!-- <img src="images/sun.png" id="icon"> -->
             </div>
             </div> 
         </nav>   
     <!-- -------carousel---------- -->
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-interval="3000">
-                <img src="https://via.placeholder.com/1920x600" class="d-block w-100">
+                <img src="images/banner.jpg" class="d-block w-100">
                 <div class="carousel-caption d-none d-md-block">
                     <h4>First slide label</h4>
                     <p>Some representative placeholder content for the first slide.</p>
                 </div>
             </div>
             <div class="carousel-item" data-interval="3000">
-                <img src="https://via.placeholder.com/1920x600" class="d-block w-100">
+                <img src="images/banner0.jpg" class="d-block w-100">
                 <div class="carousel-caption d-none d-md-block">
                     <h4>First slide label</h4>
                     <p>Some representative placeholder content for the first slide.</p>
@@ -90,69 +96,115 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-      </div>
+    </div> -->
+    <!-- -----banner----- -->
+    <section id="banner">
+        <!-- <form class="input-group">
+            <input class="form-control mr-2" type="search" placeholder="Search..." aria-label="Search">
+            <button class="btn btn-search " type="submit"><i class="fas fa-search"></i></button>
+        </form> -->
+        <h1 class="banner-title">SEARCH PRODUCTS</h1>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search...">       
+            <div class="input-group-append">
+                <button type="button" class="input-group-text btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
     <!-- -------new------------- -->
-    <div id="new">
+    <section id="new">
         <div class="container">
             <div class="row">
-                <h1 class="list-product-title">NEW PRODUCTS</h1>
+                <h1 class="list-product-title ">NEW PRODUCTS</h1>
                 <div class="list-product-subtitle">
                     <p>List product description</p>
                 </div>
                 <div class="new-product">
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-12">
-                            <div class="card card-product mb-2">
-                                <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                            <div class="card card-product mb-2 text-center">
+                                <img src="images/product1.jpg" class="img-fluid">
+                                <div class="layer">
+                                    <a href="" class="btn btn-layer">SEE MORE</a>  
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title product-title mb-2">Product</h5>
                                     <div class="card-text product-price mb-2">
                                         <span class="del-price">100.000 vnd</span>
                                     </div>
-                                    <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  
+                                    <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
                                     <h3 class="sale-sticky">New</h3>         
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12">
-                            <div class="card card-product mb-2">
-                                <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                            <div class="card card-product mb-2 text-center">
+                                <img src="images/product1.jpg" class="card-img-top">
+                                <div class="layer">
+                                    <a href="" class="btn btn-layer">SEE MORE</a>  
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title product-title mb-2">Product</h5>
                                     <div class="card-text product-price mb-2">
                                         <span class="del-price">100.000 vnd</span>
                                     </div>
-                                    <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>     
+                                    <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>   
                                     <h3 class="sale-sticky">New</h3>      
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12">
-                            <div class="card card-product mb-2">
-                                <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                            <div class="card card-product mb-2 text-center">
+                                <img src="images/product1.jpg" class="card-img-top">
+                                <div class="layer">
+                                    <a href="" class="btn btn-layer">SEE MORE</a>  
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title product-title mb-2">Product</h5>
                                     <div class="card-text product-price mb-2">
                                         <span class="del-price">100.000 vnd</span>
                                     </div>
-                                    <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>   
+                                    <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
                                     <h3 class="sale-sticky">New</h3>        
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12">
-                            <div class="card card-product mb-2">
-                                <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                            <div class="card card-product mb-2 text-center">
+                                <img src="images/product1.jpg" class="card-img-top">
+                                <div class="layer">
+                                    <a href="" class="btn btn-layer">SEE MORE</a>  
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title product-title mb-2">Product</h5>
                                     <div class="card-text product-price mb-2">
                                         <span class="del-price">100.000 vnd</span>
                                     </div>
-                                    <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  
+                                    <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
                                     <h3 class="sale-sticky">New</h3>         
                                 </div>
                             </div>
@@ -162,9 +214,9 @@
                 </div>
             </div>      
         </div>
-    </div>
+    </section>
     <!-- -------hot---- -->
-    <div id="hot">
+    <section id="hot">
         <div class="container">
                 <div class="row">
                     <h1 class="list-product-title">HOT PRODUCTS</h1>
@@ -174,57 +226,89 @@
                     <div class="new-product">
                         <div class="row">
                             <div class="col-md-3 col-sm-6 col-12">
-                                <div class="card card-product mb-2">
+                                <div class="card card-product mb-2 text-center">
                                     <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                                    <div class="layer">
+                                        <a href="" class="btn btn-layer">SEE MORE</a>  
+                                    </div>
                                     <div class="card-body">
                                         <h5 class="card-title product-title mb-2">Product</h5>
                                         <div class="card-text product-price mb-2">
                                             <span class="del-price">100.000 vnd</span>
                                         </div>
-                                        <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                        <a href="#" class="btn btn-outline-info">Xem chi tiết</a>   
+                                        <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                        <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
                                         <h3 class="sale-sticky">Hot</h3>        
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6 col-12">
-                                <div class="card card-product mb-2">
+                                <div class="card card-product mb-2 text-center">
                                     <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                                    <div class="layer">
+                                        <a href="" class="btn btn-layer">SEE MORE</a>  
+                                    </div>
                                     <div class="card-body">
                                         <h5 class="card-title product-title mb-2">Product</h5>
                                         <div class="card-text product-price mb-2">
                                             <span class="del-price">100.000 vnd</span>
                                         </div>
-                                        <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                        <a href="#" class="btn btn-outline-info">Xem chi tiết</a>     
+                                        <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                        <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>  
                                         <h3 class="sale-sticky">Hot</h3>      
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6 col-12">
-                                <div class="card card-product mb-2">
+                                <div class="card card-product mb-2 text-center">
                                     <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                                    <div class="layer">
+                                        <a href="" class="btn btn-layer">SEE MORE</a>  
+                                    </div>
                                     <div class="card-body">
                                         <h5 class="card-title product-title mb-2">Product</h5>
                                         <div class="card-text product-price mb-2">
                                             <span class="del-price">100.000 vnd</span>
                                         </div>
-                                        <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                        <a href="#" class="btn btn-outline-info">Xem chi tiết</a>   
+                                        <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                        <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
                                         <h3 class="sale-sticky">Hot</h3>        
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6 col-12">
-                                <div class="card card-product mb-2">
+                                <div class="card card-product mb-2 text-center">
                                     <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                                    <div class="layer">
+                                        <a href="" class="btn btn-layer">SEE MORE</a>  
+                                    </div>
                                     <div class="card-body">
                                         <h5 class="card-title product-title mb-2">Product</h5>
                                         <div class="card-text product-price mb-2">
                                             <span class="del-price">100.000 vnd</span>
                                         </div>
-                                        <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                        <a href="#" class="btn btn-outline-info">Xem chi tiết</a>    
+                                        <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                        <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
                                         <h3 class="sale-sticky">Hot</h3>       
                                     </div>
                                 </div>
@@ -234,9 +318,9 @@
                     </div>
                 </div>      
         </div>
-    </div>
+    </section>
     <!-- ----sale off -->
-    <div id="sale-off">
+    <section id="sale-off">
         <div class="container">
             <div class="row">
                 <h1 class="list-product-title">SALE OFF</h1>
@@ -248,29 +332,49 @@
                         <div class="col-md-3 col-sm-6 col-12">
                             <div class="card card-product mb-2">
                                 <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                                <div class="layer">
+                                    <a href="" class="btn btn-layer">SEE MORE</a>  
+                                </div>
                                 <div class="card-body">
-                                    <h5 class="card-title product-title mb-2">Product</h5>
+                                    <h5 class="card-title product-title mb-2 text-center">Product</h5>
                                     <div class="card-text product-price mb-2">
-                                        <span class="old-price">100.000 vnd</span>
-                                        <span class="new-price">80.000 vnd</span>
+                                        <div class="old-price">100.000 vnd</div>
+                                        <div class="new-price">80.000 vnd</div>
                                     </div>
-                                    <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>   
-                                    <h3 class="sale-off-sticky">Sale off</h3>        
+                                    <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                    <div class="text-center">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div> 
+                                    <h3 class="sale-off-sticky">Sale off</h3>  
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12">
                             <div class="card card-product mb-2">
                                 <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                                <div class="layer">
+                                    <a href="" class="btn btn-layer">SEE MORE</a>  
+                                </div>
                                 <div class="card-body">
-                                    <h5 class="card-title product-title mb-2">Product</h5>
+                                    <h5 class="card-title product-title mb-2 text-center">Product</h5>
                                     <div class="card-text product-price mb-2">
-                                        <span class="old-price">100.000 vnd</span>
-                                        <span class="new-price">80.000 vnd</span>
+                                        <div class="old-price">100.000 vnd</div>
+                                        <div class="new-price">80.000 vnd</div>
                                     </div>
-                                    <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>     
+                                    <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                    <div class="text-center">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div> 
                                     <h3 class="sale-off-sticky">Sale off</h3>      
                                 </div>
                             </div>
@@ -278,14 +382,24 @@
                         <div class="col-md-3 col-sm-6 col-12">
                             <div class="card card-product mb-2">
                                 <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                                <div class="layer">
+                                    <a href="" class="btn btn-layer">SEE MORE</a>  
+                                </div>
                                 <div class="card-body">
-                                    <h5 class="card-title product-title mb-2">Product</h5>
+                                    <h5 class="card-title product-title mb-2 text-center">Product</h5>
                                     <div class="card-text product-price mb-2">
-                                        <span class="old-price">100.000 vnd</span>
-                                        <span class="new-price">80.000 vnd</span>
+                                        <div class="old-price">100.000 vnd</div>
+                                        <div class="new-price">80.000 vnd</div>
                                     </div>
-                                    <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>   
+                                    <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                    <div class="text-center">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div> 
                                     <h3 class="sale-off-sticky">Sale off</h3>        
                                 </div>
                             </div>
@@ -293,14 +407,24 @@
                         <div class="col-md-3 col-sm-6 col-12">
                             <div class="card card-product mb-2">
                                 <img src="https://via.placeholder.com/280x280" class="card-img-top">
+                                <div class="layer">
+                                    <a href="" class="btn btn-layer">SEE MORE</a>  
+                                </div>
                                 <div class="card-body">
-                                    <h5 class="card-title product-title mb-2">Product</h5>
+                                    <h5 class="card-title product-title mb-2 text-center">Product</h5>
                                     <div class="card-text product-price mb-2">
-                                        <span class="old-price">100.000 vnd</span>
-                                        <span class="new-price">80.000 vnd</span>
+                                        <div class="old-price">100.000 vnd</div>
+                                        <div class="new-price">80.000 vnd</div>
                                     </div>
-                                    <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
-                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>    
+                                    <!-- <a href="#" class="btn btn-info btn-add-product"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" class="btn btn-outline-info">Xem chi tiết</a>  --> 
+                                    <div class="text-center">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div> 
                                     <h3 class="sale-off-sticky">Sale off</h3>       
                                 </div>
                             </div>
@@ -310,31 +434,108 @@
                 </div>
             </div>      
         </div>
-    </div>
-    <!-- -------contact------ -->
-    <div id="contact">
+    </section>
+    <!-- -----review------- -->
+    <section id="review">
+        <h1>USERS REVIEW</h1>
         <div class="container">
-            <h1>CONTACT US</h1>
-            <div class="map">
-                <p> Location in google maps</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3812.90779710767!2d105.43165039018373!3d10.371081349678938!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a731e7546fd7b%3A0x953539cd7673d9e5!2zxJDhuqFpIGjhu41jIEFuIEdpYW5n!5e0!3m2!1svi!2sus!4v1631502566459!5m2!1svi!2sus" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div class="social">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3>Shop online</h3>
-                        <p>Location: Long Xuyen, An Giang, VietNam</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="box-review">
+                        <p>Đánh giá của khách hàng</p>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <h5>Name</h5>
+                        <img src="images/user1.jpg" alt="">
                     </div>
-                    <div class="col-md-6 right-social">
-                        <a href=""><i class="fab fa-facebook">  Facebook</i></a>
-                        <a href=""><i class="fab fa-youtube">  Youtube</i></a>
-                        <a href=""><i class="far fa-envelope">  Shop@gmail.com</i></a>
-                        <a href=""><i class="fab fa-instagram">  Instahram</i></a>
+                </div>
+                <div class="col-md-4">
+                    <div class="box-review">
+                        <p>Đánh giá của khách hàng</p>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <h5>Name</h5>
+                        <img src="images/user1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box-review">
+                        <p>Đánh giá của khách hàng</p>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <h5>Name</h5>
+                        <img src="images/user1.jpg" alt="">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- -------contact------ -->
+    <section id="contact">
+        <div class="container-fluid">
+            <div class="container">
+                <h1 class="contact-title">CONTACT US</h1>
+            <div class="social">
+                <div class="row">
+                    <div class="col-md-4 left-social">
+                        <h1>Quick Contact</h1>
+                        <p><i class="fas fa-phone"></i><a href="#" class="link-social">+84 0123456789</a></p>
+                        <p><i class="fas fa-envelope"></i><a href="#" class="link-social">shop@gmail.com.vn</a></p>
+                        <p><i class="fas fa-home"></i><a href="#" class="link-social">My Xuyen, Long Xuyen, An Giang</a></p>
+                        
+                    </div>
+                    <div class="col-md-4 right-social">
+                        <h1>Follow Us on</h1>
+                        <p><i class="fab fa-facebook"></i><a href="#" class="link-social">Facebook</a></p>
+                        <p><i class="fab fa-youtube"></i><a href="#" class="link-social">Youtube</a></p>
+                        <p><i class="fab fa-twitter"></i><a href="#" class="link-social">Twitter</a></p>
+                        <p><i class="fab fa-instagram"></i><a href="#" class="link-social">Instagram</a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <h1>Payments</h1>
+                        <img src="images/pay_1.png" alt="">
+                        <img src="images/pay_2.png" alt="">
+                        <img src="images/pay_3.png" alt="">
+                        <img src="images/pay_4.png" alt="">
+                        <img src="images/pay_5.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="map">
+                <p> Location in google maps</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3812.90779710767!2d105.43165039018373!3d10.371081349678938!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a731e7546fd7b%3A0x953539cd7673d9e5!2zxJDhuqFpIGjhu41jIEFuIEdpYW5n!5e0!3m2!1svi!2sus!4v1631502566459!5m2!1svi!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            </div>
+        </div>
+    </section>
     
+    <script>
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function()
+        {
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme"))
+            {
+                icon.src = "images/sun.png";
+            }
+            else{
+                icon.src = "images/moon.png";
+            }
+        }
+    </script>
+
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
 </body>
 </html>
