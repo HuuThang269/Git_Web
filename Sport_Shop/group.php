@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <title>Shop Online</title>
+</head>
+<body>
+    <?php
+        require("model/database.php");
+        require("model/danhmuc.php");
+        require("model/mathang.php");
+        if(isset($_GET["id"]))
+            $danhmuc_id = $_GET["id"];
+        else
+            $danhmuc_id = 1;
+
+        $dm = new DANHMUC();
+        $danhmuc = $dm->laydanhmuc();
+        $danhmuchienhanh = $dm->laydanhmuctheoid($danhmuc_id);
+
+        $mh = new MATHANG();
+        $mathang = $mh->laymathang();
+        $mathangtheodanhmuc = $mh->laymathangtheodanhmuc($danhmuc_id);
+
+        include("include/header.php");
+    ?>
+    <!-- -------product------------- -->
+    <section id="product">
+        <div class="container">
+            <a href="group.php" style="text-decoration: none;">
+                <h1 class="list-product-title ">Các sản phẩm <?php echo $danhmuchienhanh["tendanhmuc"] ?></h1>
+            </a>
+                <div class="product">
+                    <div class="row">
+                        <?php
+                            foreach($mathang as $m):
+                            if($m["danhmuc_id"] == $danhmuc_id)                       
+                            {
+                        ?>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card card-product mb-2 text-center">
+                                    <img src="<?php echo $m["hinhanh"] ?>" class="img-fluid">
+                                    <div class="layer">
+                                        <a href="detail.php?id=<?php echo $m["id"]; ?>" class="btn btn-layer">CHI TIẾT</a>  
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title product-title mb-2" style="color:black;"><?php echo $m["tenmathang"] ?></h5>
+                                        <div class="card-text product-price mb-2">
+                                        <i class="far fa-eye" style="font-weight: bold;"></i> <span class="view" style="font-weight: bold;"><?php echo $m["luotxem"] ?></span>
+                                        </div>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>       
+                                    </div>
+                                </div>
+                            </div>  
+                        <?php 
+                            }    
+                            endforeach; 
+                        ?>
+                    </div>
+                    
+                </div>  
+        </div>
+    </section>
+    <!-- change themes -->
+    <script>
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function()
+        {
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme"))
+            {
+                icon.src = "images/sun.png";
+            }
+            else{
+                icon.src = "images/moon.png";
+            }
+        }
+    </script>
+    <!--  -->
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
+</body>
+</html>

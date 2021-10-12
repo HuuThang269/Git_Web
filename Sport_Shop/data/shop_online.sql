@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 07, 2021 at 08:20 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Host: localhost
+-- Generation Time: Oct 12, 2021 at 01:21 PM
+-- Server version: 5.7.25
+-- PHP Version: 7.1.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,9 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `shop_online`
 --
-DROP DATABASE IF EXISTS `shop_online`;
-CREATE DATABASE IF NOT EXISTS `shop_online` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `shop_online`;
 
 -- --------------------------------------------------------
 
@@ -55,7 +52,7 @@ CREATE TABLE `diachi` (
   `id` int(11) NOT NULL,
   `nguoidung_id` int(11) NOT NULL,
   `diachi` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `macdinh` tinyint(4) NOT NULL DEFAULT 1
+  `macdinh` tinyint(4) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -80,8 +77,8 @@ CREATE TABLE `donhang` (
   `id` int(11) NOT NULL,
   `nguoidung_id` int(11) NOT NULL,
   `diachi_id` int(11) DEFAULT NULL,
-  `ngay` datetime NOT NULL DEFAULT current_timestamp(),
-  `tongtien` float NOT NULL DEFAULT 0,
+  `ngay` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `tongtien` float NOT NULL DEFAULT '0',
   `ghichu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -106,9 +103,9 @@ CREATE TABLE `donhangct` (
   `id` int(11) NOT NULL,
   `donhang_id` int(11) NOT NULL,
   `mathang_id` int(11) NOT NULL,
-  `dongia` float NOT NULL DEFAULT 0,
-  `soluong` int(11) NOT NULL DEFAULT 1,
-  `thanhtien` float NOT NULL DEFAULT 0
+  `dongia` float NOT NULL DEFAULT '0',
+  `soluong` int(11) NOT NULL DEFAULT '1',
+  `thanhtien` float NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -134,14 +131,14 @@ INSERT INTO `donhangct` (`id`, `donhang_id`, `mathang_id`, `dongia`, `soluong`, 
 CREATE TABLE `mathang` (
   `id` int(11) NOT NULL,
   `tenmathang` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `mota` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `giagoc` float NOT NULL DEFAULT 0,
-  `giaban` float NOT NULL DEFAULT 0,
-  `soluongton` int(11) NOT NULL DEFAULT 0,
+  `mota` text COLLATE utf8_unicode_ci,
+  `giagoc` float NOT NULL DEFAULT '0',
+  `giaban` float NOT NULL DEFAULT '0',
+  `soluongton` int(11) NOT NULL DEFAULT '0',
   `hinhanh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `danhmuc_id` int(11) NOT NULL,
-  `luotxem` int(11) NOT NULL DEFAULT 0,
-  `luotmua` int(11) NOT NULL DEFAULT 0
+  `luotxem` int(11) NOT NULL DEFAULT '0',
+  `luotmua` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -149,18 +146,22 @@ CREATE TABLE `mathang` (
 --
 
 INSERT INTO `mathang` (`id`, `tenmathang`, `mota`, `giagoc`, `giaban`, `soluongton`, `hinhanh`, `danhmuc_id`, `luotxem`, `luotmua`) VALUES
-(1, 'Áo thể thao Adidas trắng sọc đen', NULL, 0, 100000, 10, 'images/a1.jpg', 1, 3, 0),
-(2, 'Quần thể thao 3 sọc Adidas đen sọc trắng', NULL, 0, 150000, 10, 'images/a2.jpg', 1, 9, 0),
-(3, 'Giày thể thao Adidas giành cho đi chơi và tập thể thao', NULL, 0, 350000, 10, 'images/a3.jpg', 1, 9, 0),
-(4, 'Dép Adidas đúc cao su nguyên khối', NULL, 0, 250000, 10, 'images/a4.jpg', 1, 7, 0),
-(5, 'Áo thun Nike cao cấp nhập khẩu USA', NULL, 0, 200000, 10, 'images/n1.jpg', 2, 4, 0),
-(6, 'Quần thể thao Nike siêu co giản nhập khẩu USA', NULL, 0, 300000, 10, 'images/n2.jpg', 2, 4, 0),
-(7, 'Giày thể thao Nike AF1', NULL, 0, 350000, 10, 'images/n3.jpg', 2, 2, 0),
-(8, 'Dép Nike đúc cao su nguyên khối', NULL, 0, 200000, 10, 'images/n4.jpg', 2, 1, 0),
-(9, 'Áo thun Puma cao cấp trắng đen', NULL, 0, 150000, 10, 'images/p1.jpg', 3, 6, 0),
-(10, 'Quần thể thao Puma Đen', NULL, 0, 200000, 10, 'images/p2.jpg', 3, 3, 0),
-(11, 'Giày thể thao Puma trắng đen', NULL, 0, 300000, 10, 'images/p3.jpg', 3, 4, 0),
-(12, 'Dép Puma đúc cao su nguyên khối', NULL, 0, 200000, 10, 'images/p4.jpg', 3, 7, 0);
+(1, 'Áo thể thao Adidas trắng sọc đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 100000, 10, 'images/a1.jpg', 1, 87, 0),
+(2, 'Quần thể thao 3 sọc Adidas đen sọc trắng', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 150000, 10, 'images/a2.jpg', 1, 15, 0),
+(3, 'Giày thể thao 3 sọc Adidas ', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 350000, 10, 'images/a3.jpg', 1, 28, 0),
+(4, 'Dép Adidas đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 250000, 10, 'images/a4.jpg', 1, 7, 0),
+(5, 'Áo thun Nike cao cấp nhập khẩu USA', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/n1.jpg', 2, 6, 0),
+(6, 'Quần thể thao Nike siêu co giản', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n2.jpg', 2, 16, 0),
+(7, 'Giày thể thao Nike AF1 trắng đen có logo Nike', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 350000, 10, 'images/n3.jpg', 2, 91, 0),
+(8, 'Dép Nike đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/n4.jpg', 2, 2, 0),
+(9, 'Áo thun Puma cao cấp trắng đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 150000, 10, 'images/p1.jpg', 3, 8, 0),
+(10, 'Quần thể thao Puma Đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/p2.jpg', 3, 3, 0),
+(11, 'Giày thể thao Puma trắng đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/p3.jpg', 3, 5, 0),
+(12, 'Dép Puma đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/p4.jpg', 3, 7, 0),
+(13, 'Giày thể thao Adidas thấm hút tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/a5.jpg', 1, 4, 0),
+(14, 'Áo thể thao Adidas siêu thoáng', NULL, 0, 250000, 10, 'images/a6.jpg', 1, 12, 0),
+(15, 'Giày thể thao Nike đàn hồi tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n5.jpg', 2, 6, 0),
+(16, 'Áo thể thao Nike siêu thấm tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n6.jpg', 2, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -174,8 +175,8 @@ CREATE TABLE `nguoidung` (
   `sodienthoai` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `matkhau` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `hoten` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `loai` tinyint(4) NOT NULL DEFAULT 3,
-  `trangthai` tinyint(4) NOT NULL DEFAULT 1,
+  `loai` tinyint(4) NOT NULL DEFAULT '3',
+  `trangthai` tinyint(4) NOT NULL DEFAULT '1',
   `hinhanh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -273,7 +274,7 @@ ALTER TABLE `donhangct`
 -- AUTO_INCREMENT for table `mathang`
 --
 ALTER TABLE `mathang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `nguoidung`

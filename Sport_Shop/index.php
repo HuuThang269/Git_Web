@@ -23,6 +23,7 @@
         $mh = new MATHANG();
         $mathang = $mh->laymathang();
         include("include/header.php");
+        include("include/banner.php");
     ?>
     <!-- -------product------------- -->
     <section id="product">
@@ -30,7 +31,9 @@
             <?php
                 foreach($danhmuc as $d):
             ?>
-            <a href="group.php" style="text-decoration: none;"><h1 class="list-product-title "><?php echo $d["tendanhmuc"] ?></h1></a>
+            <a href="group.php?id=<?php echo $d["id"]; ?>" style="text-decoration: none;">
+                <h1 class="list-product-title "><?php echo $d["tendanhmuc"] ?></h1>
+            </a>
                 <div class="product">
                     <div class="row">
                     <?php

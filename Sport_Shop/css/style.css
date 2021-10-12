@@ -127,55 +127,7 @@
     background-color: rgb(196, 10, 10) !important;
     color: white;
 }
-/* ---------------------hot----------------------- */
- #hot{
-    padding: 50px 0;
-    background: var(--primary-color);
-} 
-.sale-sticky{
-    position: absolute;
-    transform: rotate(45deg);
-    top: 11px;
-    right: -43px;
-    text-align: center;
-    background-color: orangered;
-    color: white;
-    width: 150px;
-    display: block;
-}
-/* --------sale off------- */
-#sale-off{
-    padding: 50px 0;
-    background: var(--primary-color);
-}
-.sale-off-sticky{
-    position: absolute;
-    transform: rotate(45deg);
-    top: 22px;
-    right: -34px;
-    text-align: center;
-    background-color: orangered;
-    color: white;
-    width: 150px;
-    display: block;
-}
-.product-price{
-    margin: auto;
-}
-.old-price{
-    font-size: 18px;
-    text-align: center;
-    text-decoration: line-through;
-}
-.new-price{
-    margin: auto;
-    font-size: 25px;
-    text-align: center;
-    /* float: right; */
-    background-color: orangered;
-    color: white;
-    padding: 2px;
-}
+
 /* -------------------------------review----------------------------------- */
 #review{
     padding: 50px 0;
@@ -338,21 +290,21 @@ form a{
     padding: 50px 0;
     height: auto;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/banner0.jpg);
+    background-color:white!important;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 }
 .detail-box{
-    border: 0.5px solid white;
+    border: 2px solid black;
     padding: 10px;
 }
 .breadcrumb{
-    background: white !important;
+    background: black !important;
 }
 .right-detail{
     padding: 0 30px ;
-    color: white !important;
+    color: black !important;
 }
 .right-detail p{
     margin: 10px 0;
@@ -362,8 +314,8 @@ form a{
 }
 .size span{
     margin: 0 10px;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color:white;
     font-size: 20px;
     padding: 10px;
 }
