@@ -1,5 +1,3 @@
-
-   
 -- phpMyAdmin SQL Dump
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
@@ -23,10 +21,41 @@ SET time_zone = "+00:00";
 --
 -- Database: `shop_online`
 --
-DROP DATABASE IF EXISTS `shop_online`;
-CREATE DATABASE IF NOT EXISTS `shop_online` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `shop_online`;
+DROP DATABASE IF EXISTS `example`;
+CREATE DATABASE IF NOT EXISTS `example` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `example`;
 -- --------------------------------------------------------
+-- Table structure for table `loai`
+CREATE TABLE `loai` (
+  `id` int(11) NOT NULL,
+  `tenloai` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `loai` (`id`, `tenloai`) VALUES
+(1, 'Quần áo'),
+(2, 'Giày dép');
+
+
+--Table structure for table `size`
+CREATE TABLE `kichco` (
+`id` int(11) NOT NULL,
+`tensize` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+`loai_id` int(11) NOT NULL
+constraint fk_kichco_loai Foreign key (loai_id) references loai (id)
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `kichco` (`id`, `tensize`,`loai_id`) VALUES
+(1, 'S' ,1),
+(2, 'M' ,1),
+(3, 'L' ,1),
+(4, 'XL' ,1),
+(5, '38' ,2),
+(6, '39' ,2,
+(7, '40' ,2),
+(8, '41' ,2),
+(9, '42' ,2),
+(10,'43' ,2);
 
 --
 -- Table structure for table `danhmuc`
@@ -141,6 +170,7 @@ CREATE TABLE `mathang` (
   `soluongton` int(11) NOT NULL DEFAULT '0',
   `hinhanh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `danhmuc_id` int(11) NOT NULL,
+  `loai_id` int(11) NOT NULL,
   `luotxem` int(11) NOT NULL DEFAULT '0',
   `luotmua` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -150,22 +180,22 @@ CREATE TABLE `mathang` (
 --
 
 INSERT INTO `mathang` (`id`, `tenmathang`, `mota`, `giagoc`, `giaban`, `soluongton`, `hinhanh`, `danhmuc_id`, `luotxem`, `luotmua`) VALUES
-(1, 'Áo thể thao Adidas trắng sọc đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 100000, 10, 'images/a1.jpg', 1, 87, 0),
-(2, 'Quần thể thao 3 sọc Adidas đen sọc trắng', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 150000, 10, 'images/a2.jpg', 1, 15, 0),
-(3, 'Giày thể thao 3 sọc Adidas ', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 350000, 10, 'images/a3.jpg', 1, 28, 0),
-(4, 'Dép Adidas đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 250000, 10, 'images/a4.jpg', 1, 7, 0),
-(5, 'Áo thun Nike cao cấp nhập khẩu USA', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/n1.jpg', 2, 6, 0),
-(6, 'Quần thể thao Nike siêu co giản', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n2.jpg', 2, 16, 0),
-(7, 'Giày thể thao Nike AF1 trắng đen có logo Nike', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 350000, 10, 'images/n3.jpg', 2, 91, 0),
-(8, 'Dép Nike đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/n4.jpg', 2, 2, 0),
-(9, 'Áo thun Puma cao cấp trắng đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 150000, 10, 'images/p1.jpg', 3, 8, 0),
-(10, 'Quần thể thao Puma Đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/p2.jpg', 3, 3, 0),
-(11, 'Giày thể thao Puma trắng đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/p3.jpg', 3, 5, 0),
-(12, 'Dép Puma đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/p4.jpg', 3, 7, 0),
-(13, 'Giày thể thao Adidas thấm hút tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/a5.jpg', 1, 4, 0),
-(14, 'Áo thể thao Adidas siêu thoáng', NULL, 0, 250000, 10, 'images/a6.jpg', 1, 12, 0),
-(15, 'Giày thể thao Nike đàn hồi tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n5.jpg', 2, 6, 0),
-(16, 'Áo thể thao Nike siêu thấm tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n6.jpg', 2, 4, 0);
+(1, 'Áo thể thao Adidas trắng sọc đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 100000, 10, 'images/a1.jpg', 1,1, 87, 0),
+(2, 'Quần thể thao 3 sọc Adidas đen sọc trắng', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 150000, 10, 'images/a2.jpg', 1,1, 15, 0),
+(3, 'Giày thể thao 3 sọc Adidas ', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 350000, 10, 'images/a3.jpg', 1,2, 28, 0),
+(4, 'Dép Adidas đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 250000, 10, 'images/a4.jpg', 1,2, 7, 0),
+(5, 'Áo thun Nike cao cấp nhập khẩu USA', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/n1.jpg', 2,1, 6, 0),
+(6, 'Quần thể thao Nike siêu co giản', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n2.jpg', 2,1, 16, 0),
+(7, 'Giày thể thao Nike AF1 trắng đen có logo Nike', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 350000, 10, 'images/n3.jpg', 2,2, 91, 0),
+(8, 'Dép Nike đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/n4.jpg', 2,2, 2, 0),
+(9, 'Áo thun Puma cao cấp trắng đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 150000, 10, 'images/p1.jpg', 3,1, 8, 0),
+(10, 'Quần thể thao Puma Đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/p2.jpg', 3,1, 3, 0),
+(11, 'Giày thể thao Puma trắng đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/p3.jpg', 3,2, 5, 0),
+(12, 'Dép Puma đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/p4.jpg', 3,2, 7, 0),
+(13, 'Giày thể thao Adidas thấm hút tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/a5.jpg', 1,2, 4, 0),
+(14, 'Áo thể thao Adidas siêu thoáng', NULL, 0, 250000, 10, 'images/a6.jpg', 1,1, 12, 0),
+(15, 'Giày thể thao Nike đàn hồi tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n5.jpg', 2,2, 6, 0),
+(16, 'Áo thể thao Nike siêu thấm tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n6.jpg', 2,1, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -315,6 +345,14 @@ ALTER TABLE `donhangct`
 ALTER TABLE `mathang`
   ADD CONSTRAINT `mathang_ibfk_1` FOREIGN KEY (`danhmuc_id`) REFERENCES `danhmuc` (`id`) ON UPDATE CASCADE;
 COMMIT;
+
+ALTER TABLE `mathang`
+  ADD CONSTRAINT `mathang_ibfk_2` FOREIGN KEY (`loai_id`) REFERENCES `loai` (`id`) ON UPDATE CASCADE;
+COMMIT;
+
+--ALTER TABLE `kichco`
+  --ADD CONSTRAINT `kichco_ibfk_1` FOREIGN KEY (`loai_id`) REFERENCES `loai` (`id`) ON UPDATE CASCADE;
+--COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

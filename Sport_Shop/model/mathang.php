@@ -1,7 +1,5 @@
 <?php
 class MATHANG{
-    //thuộc tính get/set
-
     // Lấy danh sách mặt hàng
     public function laymathang()
     {
@@ -51,6 +49,26 @@ class MATHANG{
             $cmd->bindValue(":dmid", $danhmuc_id);
             $cmd->execute();
             $result = $cmd->fetchAll();
+            return $result;
+        }
+        catch(PDOException $e)
+        {
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
+     //lấy danh sách mặt hàng theo loại
+    public function layloaitheomathang($id)
+    {
+        $dbcon = DATABASE::connect();
+        try
+        {
+            $sql = "SELECT loai_id FROM mathang WHERE id=:id";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":id", $id);
+            $cmd->execute();
+            $result = $cmd->fetch();
             return $result;
         }
         catch(PDOException $e)

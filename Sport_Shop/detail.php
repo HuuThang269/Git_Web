@@ -17,6 +17,7 @@
         require("model/database.php");
         require("model/danhmuc.php");
         require("model/mathang.php");
+        require("model/size.php");
 
         if(isset($_GET["id"]))
             $mathang_id = $_GET["id"];
@@ -30,6 +31,12 @@
         $mathang = $mh->laymathang();
         $mathanghienhanh = $mh->laymathangtheoid($mathang_id);
         $mathangtheodanhmuc = $mh->laymathangtheodanhmuc($mathanghienhanh["danhmuc_id"]);
+
+        $loaitheomathang = $mh ->layloaitheomathang($mathang_id);
+
+        $s = new SIZE();
+        $laysizetheoloaiid = $s->laysizetheoloai($loaitheomathang["loai_id"]);
+         
 
         //Tăng lượt xem
         $mh->tangluotxem($mathanghienhanh["id"]);
@@ -63,10 +70,13 @@
                                 <h2>Giá bán: <span style="color: red;"><?php echo number_format($mathanghienhanh["giaban"]); ?> đ</span></h2>
                                 <h4>Size</h4>
                                 <div class="size">
-                                    <span>M</span>
-                                    <span>L</span>
-                                    <span>XL</span>
-                                    <span>XXL</span>
+                                <?php 
+                                    foreach ($laysizetheoloaiid as $size):    
+                                ?>
+                                <span> <?php echo $size["tensize"]; ?></span>
+                               <?php
+                                    endforeach;
+                                ?>
                                 </div>
                                 <p style="margin-top: 30px;">Lượt xem: <?php echo $mathanghienhanh["luotxem"]; ?> </p> 
                                 <p style="margin-bottom:50px;"><?php echo $mathanghienhanh["mota"];?></p>
