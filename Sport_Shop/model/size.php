@@ -1,6 +1,7 @@
 <?php 
 class SIZE
 {
+    //lấy danh sách size
     public function laysize()
     {
         $dbcon = DATABASE::connect();
@@ -20,7 +21,7 @@ class SIZE
         }
     }
 
-    //lấy danh size theo loại
+    //lấy danh sách size theo loại
     public function laysizetheoloai($loai_id)
     {
         $dbcon = DATABASE::connect();

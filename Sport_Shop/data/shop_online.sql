@@ -1,11 +1,9 @@
-
-   
 -- phpMyAdmin SQL Dump
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 12, 2021 at 01:21 PM
+-- Generation Time: Oct 18, 2021 at 08:17 AM
 -- Server version: 5.7.25
 -- PHP Version: 7.1.26
 
@@ -129,6 +127,25 @@ INSERT INTO `donhangct` (`id`, `donhang_id`, `mathang_id`, `dongia`, `soluong`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `loai`
+--
+
+CREATE TABLE `loai` (
+  `id` int(11) NOT NULL,
+  `tenloai` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `loai`
+--
+
+INSERT INTO `loai` (`id`, `tenloai`) VALUES
+(1, 'Quần áo'),
+(2, 'Giày dép');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mathang`
 --
 
@@ -142,30 +159,31 @@ CREATE TABLE `mathang` (
   `hinhanh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `danhmuc_id` int(11) NOT NULL,
   `luotxem` int(11) NOT NULL DEFAULT '0',
-  `luotmua` int(11) NOT NULL DEFAULT '0'
+  `luotmua` int(11) NOT NULL DEFAULT '0',
+  `loai_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `mathang`
 --
 
-INSERT INTO `mathang` (`id`, `tenmathang`, `mota`, `giagoc`, `giaban`, `soluongton`, `hinhanh`, `danhmuc_id`, `luotxem`, `luotmua`) VALUES
-(1, 'Áo thể thao Adidas trắng sọc đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 100000, 10, 'images/a1.jpg', 1, 87, 0),
-(2, 'Quần thể thao 3 sọc Adidas đen sọc trắng', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 150000, 10, 'images/a2.jpg', 1, 15, 0),
-(3, 'Giày thể thao 3 sọc Adidas ', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 350000, 10, 'images/a3.jpg', 1, 28, 0),
-(4, 'Dép Adidas đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 250000, 10, 'images/a4.jpg', 1, 7, 0),
-(5, 'Áo thun Nike cao cấp nhập khẩu USA', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/n1.jpg', 2, 6, 0),
-(6, 'Quần thể thao Nike siêu co giản', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n2.jpg', 2, 16, 0),
-(7, 'Giày thể thao Nike AF1 trắng đen có logo Nike', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 350000, 10, 'images/n3.jpg', 2, 91, 0),
-(8, 'Dép Nike đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/n4.jpg', 2, 2, 0),
-(9, 'Áo thun Puma cao cấp trắng đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 150000, 10, 'images/p1.jpg', 3, 8, 0),
-(10, 'Quần thể thao Puma Đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/p2.jpg', 3, 3, 0),
-(11, 'Giày thể thao Puma trắng đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/p3.jpg', 3, 5, 0),
-(12, 'Dép Puma đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/p4.jpg', 3, 7, 0),
-(13, 'Giày thể thao Adidas thấm hút tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/a5.jpg', 1, 4, 0),
-(14, 'Áo thể thao Adidas siêu thoáng', NULL, 0, 250000, 10, 'images/a6.jpg', 1, 12, 0),
-(15, 'Giày thể thao Nike đàn hồi tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n5.jpg', 2, 6, 0),
-(16, 'Áo thể thao Nike siêu thấm tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n6.jpg', 2, 4, 0);
+INSERT INTO `mathang` (`id`, `tenmathang`, `mota`, `giagoc`, `giaban`, `soluongton`, `hinhanh`, `danhmuc_id`, `luotxem`, `luotmua`, `loai_id`) VALUES
+(1, 'Áo thể thao Adidas trắng sọc đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 100000, 10, 'images/a1.jpg', 1, 91, 0, 1),
+(2, 'Quần thể thao 3 sọc Adidas đen sọc trắng', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 150000, 10, 'images/a2.jpg', 1, 17, 0, 1),
+(3, 'Giày thể thao 3 sọc Adidas ', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 350000, 10, 'images/a3.jpg', 1, 28, 0, 2),
+(4, 'Dép Adidas đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 250000, 10, 'images/a4.jpg', 1, 9, 0, 2),
+(5, 'Áo thun Nike cao cấp nhập khẩu USA', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/n1.jpg', 2, 8, 0, 1),
+(6, 'Quần thể thao Nike siêu co giản', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n2.jpg', 2, 16, 0, 1),
+(7, 'Giày thể thao Nike AF1 trắng đen có logo Nike', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 350000, 10, 'images/n3.jpg', 2, 91, 0, 2),
+(8, 'Dép Nike đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/n4.jpg', 2, 3, 0, 2),
+(9, 'Áo thun Puma cao cấp trắng đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 150000, 10, 'images/p1.jpg', 3, 8, 0, 1),
+(10, 'Quần thể thao Puma Đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/p2.jpg', 3, 3, 0, 1),
+(11, 'Giày thể thao Puma trắng đen', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/p3.jpg', 3, 5, 0, 2),
+(12, 'Dép Puma đúc cao su nguyên khối', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/p4.jpg', 3, 7, 0, 2),
+(13, 'Giày thể thao Adidas thấm hút tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 200000, 10, 'images/a5.jpg', 1, 6, 0, 2),
+(14, 'Áo thể thao Adidas siêu thoáng', NULL, 0, 250000, 10, 'images/a6.jpg', 1, 12, 0, 1),
+(15, 'Giày thể thao Nike đàn hồi tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n5.jpg', 2, 6, 0, 2),
+(16, 'Áo thể thao Nike siêu thấm tốt', '- Chất liệu cao cấp co giản tốt <br/>\r\n- Thích hợp cho thể thao và đi du lịch <br/>\r\n- Kiểu dáng trẻ trung, năng động <br/>', 0, 300000, 10, 'images/n6.jpg', 2, 4, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -199,6 +217,34 @@ INSERT INTO `nguoidung` (`id`, `email`, `sodienthoai`, `matkhau`, `hoten`, `loai
 (8, 'ccc@abc.com', '1234567892', 'd893377c9d852e09874125b10a0e4f66', 'CCC', 3, 1, NULL),
 (9, 'ddd@abc.com', '1234567893', '43042f668f07adfd174cb1823d4795e1', 'DDD', 3, 1, NULL),
 (10, 'eee@abc.com', '1234567894', 'f66f4446648ae7ae56419eca43bf2b8a', 'EEE', 3, 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `size`
+--
+
+CREATE TABLE `size` (
+  `id` int(11) NOT NULL,
+  `tensize` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `size_loai_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `size`
+--
+
+INSERT INTO `size` (`id`, `tensize`, `size_loai_id`) VALUES
+(1, 'S', 1),
+(2, 'M', 1),
+(3, 'L', 1),
+(4, 'XL', 1),
+(5, '38', 2),
+(6, '39', 2),
+(7, '40', 2),
+(8, '41', 2),
+(9, '42', 2),
+(10, '43', 2);
 
 --
 -- Indexes for dumped tables
@@ -234,17 +280,31 @@ ALTER TABLE `donhangct`
   ADD KEY `mathang_id` (`mathang_id`);
 
 --
+-- Indexes for table `loai`
+--
+ALTER TABLE `loai`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `mathang`
 --
 ALTER TABLE `mathang`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `danhmuc_id` (`danhmuc_id`);
+  ADD KEY `danhmuc_id` (`danhmuc_id`),
+  ADD KEY `mathang_fk_loai` (`loai_id`);
 
 --
 -- Indexes for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `size`
+--
+ALTER TABLE `size`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `size_fk_loai` (`size_loai_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -275,15 +335,27 @@ ALTER TABLE `donhangct`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `loai`
+--
+ALTER TABLE `loai`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `mathang`
 --
 ALTER TABLE `mathang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `size`
+--
+ALTER TABLE `size`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
@@ -313,7 +385,14 @@ ALTER TABLE `donhangct`
 -- Constraints for table `mathang`
 --
 ALTER TABLE `mathang`
+  ADD CONSTRAINT `mathang_fk_loai` FOREIGN KEY (`loai_id`) REFERENCES `loai` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `mathang_ibfk_1` FOREIGN KEY (`danhmuc_id`) REFERENCES `danhmuc` (`id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `size`
+--
+ALTER TABLE `size`
+  ADD CONSTRAINT `size_fk_loai` FOREIGN KEY (`size_loai_id`) REFERENCES `loai` (`id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

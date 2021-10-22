@@ -68,10 +68,10 @@
 </div>
 <!-- jumbotron -->
 <div class="jumbotron" style="background-color: white !important; padding: 50px 0 0;">
-    <h1 class="display-4 text-center" style="font-weight: bold;">CHÀO MỪNG BẠN ĐẾN VỚI CỬA HÀNG QUẦN ÁO THỂ THAO HT-SPORT</h1>
+    <h1 class="display-4 text-center wow fadeInDown delay-0.5s "  style="font-weight: bold;">CHÀO MỪNG BẠN ĐẾN VỚI CỬA HÀNG QUẦN ÁO THỂ THAO HT-SPORT</h1>
     <hr class="my-4">
     <h3 class="text-center">Chuyên cung cấp những sản phẩm thời trang thể thao của các hãng Adidas - Nike - Puma</h3>
-    <div class="container" style="margin:auto; text-align:center;">
+    <div class="container  wow fadeInUp delay-0.5s" style="margin:auto; text-align:center;">
         <img style="margin: 0 50px;" src="/images/adidas.png" alt="">
         <img style="margin: 0 50px;" src="/images/nike.png" alt="">
         <img style="margin: 0 50px;" src="/images/puma.png" alt="">
